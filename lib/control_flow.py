@@ -27,16 +27,14 @@ def fizzbuzz(num):
         return num
     else:
         return string
-
+    
 def calculator(operation, num1, num2):
-    if(operation == "+"):
-        return num1 + num2
-    elif(operation == "-"):
-        return num1 - num2
-    elif(operation == "*"):
-        return num1 * num2
-    elif(operation == "/"):
-        return num1 / num2
-    else:
+    operation_map={
+        "+": num1 + num2,
+        "-": num1 - num2,
+        "*": num1 * num2,
+        "/": num1 / num2
+    }
+    if operation not in operation_map:
         print("Invalid operation!")
-        return None
+    return operation_map.get(operation, None)
